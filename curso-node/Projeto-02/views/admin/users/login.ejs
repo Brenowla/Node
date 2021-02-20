@@ -1,0 +1,24 @@
+<%- include('../../partials/header') %> 
+<body>
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md">
+        <a class="navbar-brand" href="/">
+            GuiaPress
+        </a>
+    </nav>
+    <div class="container">
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+            <div class="card-body">
+                <form action="/authenticate" method="POST">
+                    <input type="text" name="email" placeholder="email@exemplo.com" class="form-control mb-1">
+                    <input type="password" name="password" placeholder="******" class="form-control mb-1">
+                    <button type="submit" class="btn btn-success btn-block mb-1">Logar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<%- include('../../partials/footer') %> 

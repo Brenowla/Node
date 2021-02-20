@@ -1,0 +1,37 @@
+<%- include('../../partials/header') %>
+
+    <body>
+        <%- include('../../partials/homenavbar') %>
+
+            <div class="container mt-4">
+                <% results.articles.rows.forEach(article=> {%>
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h2>
+                                <%= article.title %>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <a href="/<%= article.slug %> " class="btn btn-success">Ler artigo</a>
+                        </div>
+                    </div>
+                    <%}) %>
+
+                        <div class="row">
+                            <div class="col">
+                                <hr>
+                                <% if(results.next){%>
+                                    <a class="btn" style="float: right;"
+                                        href="/articles/page/<%= results.page+1 %> ">Próxima página >>></a>
+                                <%} %>
+                                <% if(results.page>=2){%>
+                                    <a class="btn" style="float: right;"
+                                        href="/articles/page/<%= results.page-1 %> "><<< Página anterior </a>
+                                <%} %>
+                            </div>
+                        </div>
+
+
+            </div>
+    </body>
+    <%- include('../../partials/footer') %>
